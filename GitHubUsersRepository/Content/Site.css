@@ -1,0 +1,168 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d1117;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;    
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.user-form {
+    width: 100%;
+    max-width: 700px;
+}
+
+.user-form input {
+    width: 100%;
+    background-color: #4c2885;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-family: inherit;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+    .user-form button {
+        width: 130px;
+        background-color: #5010b7;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        font-family: inherit;
+        box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(0, 0, 0, 0.1);
+        margin-left: 10px;
+    }
+
+    .user-form input::placeholder {
+        color: #c1c1c1;
+    }
+
+    .user-form input:focus {
+        outline: none;
+    }
+
+.card {
+    max-width: 800px;
+    background-color: #4c2885;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05), 0 15px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+    padding: 3rem;
+    margin: 0;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 10px solid #2a2a72;
+    height: 150px;
+    width: 150px;
+}
+
+.user-info {
+    color: #eee;
+    margin-left: 2rem;
+    width: 600px;
+}
+
+    .user-info h2 {
+        margin-top: 0;
+    }
+
+    .user-info hr {
+        margin-top: 40px;
+        clear: both;
+    }
+
+    .user-info ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        .user-info ul li {
+            margin-left: 5px;
+            float: left;
+            width: 85px;
+        }
+
+            .user-info ul li strong {
+                font-size: 0.9rem;
+            }
+
+.repo {
+    text-decoration: none;
+    color: #fff;
+    background-color: #212a72;
+    font-size: 1.2rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+    .repo .stars {
+        color: #e5e500;
+    }
+
+    .repo .title {
+        margin-left: 5px;
+    }
+
+    .repo:hover {
+        color: #add7fd;
+        background-color: #300574;
+        text-decoration: none;
+    }
+
+    .repo label.description {
+        font-size: 10px;
+        font-weight: 500;
+        cursor: pointer;
+        color: #efe5e5;
+        display: block;
+    }
+
+@media (max-width: 500px) {
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-form {
+        max-width: 400px;
+    }
+}  
