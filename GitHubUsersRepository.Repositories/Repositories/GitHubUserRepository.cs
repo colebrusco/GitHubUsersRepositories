@@ -10,6 +10,8 @@ namespace GitHubUsersRepository.Repositories.Repositories
 {
     public class GitHubUserRepository : IGitHubUserRepository
     {
+        private const string USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36";
+
         public async Task<GitHubUser> GetGitHubUser(string url, string userName)
         {
             try
@@ -17,7 +19,7 @@ namespace GitHubUsersRepository.Repositories.Repositories
                 using (var httpClient = new HttpClient())
                 {
                     var gitHubUserUrl = string.Concat(url, userName);
-                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36");
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", USER_AGENT);
                     string resultado = await httpClient.GetStringAsync(gitHubUserUrl);
                     var gitHubUser = JsonConvert.DeserializeObject<GitHubUser>(resultado);
                     
@@ -37,7 +39,7 @@ namespace GitHubUsersRepository.Repositories.Repositories
             {
                 using (var httpClient = new HttpClient())
                 {
-                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36");
+                    httpClient.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", USER_AGENT);
                     string resultado = await httpClient.GetStringAsync(url);
                     gitHubRepository = JsonConvert.DeserializeObject<List<GitHubRepository>>(resultado);
                   
